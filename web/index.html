@@ -1,99 +1,25 @@
 <!DOCTYPE html>
 <html>
-<meta http-equiv="Content-Type" Content="text/html; charset=utf-8">
-<head>
-    <title>Сайт для Дорма</title>
+	<meta http-equiv="Content-Type" Content="text/html; charset=utf-8">
+	<head>
+		<title>Сайт для Дорма</title>
 
-    <link href="index.css" rel="stylesheet" type="text/css">
-    <link rel="shortcut icon" href="/favicon.ico">
+		<link href="reset.css" rel="stylesheet" type="text/css">
+		<link href="index.css" rel="stylesheet" type="text/css">
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
 
-    <script type="text/javascript">
-        function get_bunny() {
-            var bunnies = [
-		"Зато вы совсем не толстый!",
-		"Не огорчайтесь! Лучше скушайте это пирожное… Ах, вам же его нельзя!",
-		"Подумаешь! Зато в профиль вы немного похожи на Лёшу!",
-		"Могло быть и хуже! Например, вы могли родиться Креведом. Или неклёвым карликом. Или вам подали бы обед с опозданием в минуту. Или ваш интернет мог бы иногда пропадать без каких-либо причин. Ну вот, теперь у меня депрессия. Довольны?!",
-		"Все будет хорошо! Вот станете президентом, и обнаженный Стиплер с обнаженным Лёшей будут драться за право укутать вас пледиком!",
-		"Кто у нас тут самый несчастный котик? Иди скорее обниму :)",
-		"((((((((",
-		"Не печальтесь, лучше выпейте вечернего кефира, бессердечный вы фашист!",
-		"Ну и пусть! Зато вы увиделись с гигантским птеродактилем!",
-		"А хотите, дам вам совет?",
-		"Да.",
-		"Хей, сюда можно заглушку, этот вариант он никогда не выберет!",
-		"Нет.",
-		"Ну и ладно! Ну и пожалуйста!",
-		"there there",
-		"Отныне все ваши печали позади! Купите книгу “100 рецептов успеха от Петровича” и будьте счастливы!",
-		"Не думайте об этом! Лучше думайте о Товарище!",
-		"Зато вам платья идут больше, чем Лю!",
-		"Отпустите бороду! С бородатыми людьми этого никогда не случается.",
-		"Ах вы бедная принцесса!",
-		"Бегите же скорее в подвал! Школьницы вас утешат!",
-		"Ничего! Вот посмотрите на Лёшу! ",
-		"…Здорово, да?",
-		"Хм!",
-		"Зато теперь вам, возможно, увеличат пенсию!",
-		"Не печальтесь, выше нос! Представьте себе, что вы Кревед и задеваете носом солнце! И да, я помню, что вы ненавидите Креведа и солнце.",
-		"Зато вы победили в “Легат-турнире”!",
-		"Печалька (",
-		"Зато вы скоро уедете на дачу! Вы же любите дачу!",
-		"Зато где-то есть садовый гном, который думает о вас!",
-            ];
+	<body>
+		<div id="solution"></div>
 
-            if (is_first_timer()) {
-                return bunnies[0];
-            }
-
-            var ret = Math.floor(Math.random() * bunnies.length);
-            return bunnies[ret];
-        }
-
-        // ну не знаю я этого вашего яваскрипта, не знаю!
-        function is_first_timer() {
-            if (document.cookie.match(/seen/i))
-                return false;
-
-            document.cookie = "seen=1; expires=Tue, 1 Jan 2036 12:00:00 GMT; path=/";
-            return true;
-        }
-
-        function hide(elem) {
-            document.getElementById(elem).style.display = 'none';
-        }
-
-        function show(elem) {
-            document.getElementById(elem).style.display = 'block';
-        }
-
-        function show_bunny(what) {
-            if(!what)
-            {
-                var bunny = get_bunny();
-                document.getElementById("solution").innerHTML = '<h2 onclick="show_bunny(\'Im_not_finished_yet\')">' + bunny + '</h2>' +
-                    '<p><a href="#" onclick="show_bunny(\'Im_not_finished_yet\')">Ещё пожаловаться</a></p>';
-                hide('problem');
-                show('solution');
-            } else {
-                document.getElementById("textarea").value='';
-                show('problem');
-                hide('solution');
-            }
-        }
-    </script>
-</head>
-
-<body>
-
-<div id="solution"></div>
-
-<div id="problem">
-    <h1 id="problem-head">Опишите вашу проблему:</h1>
-    <textarea id="textarea" rows="10" cols="30"></textarea>
-    <div><button id="button" onclick="show_bunny();">Пожаловаться</button></div>
-</div>
-
-</body>
+		<div id="problem">
+			<h1 id="problem-head">Опишите вашу проблему:</h1>
+			<textarea id="textarea" rows="10" cols="30"></textarea>
+			<div><button id="button" onclick="show_consolation();">Пожаловаться</button></div>
+		</div>
+		<!-- scripts -->
+		<script type="text/javascript" src="jquery-2.1.3.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+	</body>
 
 </html>
