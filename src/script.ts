@@ -35,7 +35,6 @@ var consolations = <Consolation[]>
 	, { text : "Кто у нас тут самый несчастный котик? Иди скорее обниму :)" }
 	, { text : "((((((((" }
 	, { text : "Не печальтесь, лучше выпейте вечернего кефира, бессердечный вы фашист!" }
-	, { text : "Мне следует предложить вам горячий напиток!" }
 	, { text : "Ну и пусть! Зато вы увиделись с гигантским птеродактилем!" }
 	, { text : "there there" }
 	, { text : "Отныне все ваши печали позади! Купите книгу “100 рецептов успеха от Петровича” и… и у Петровича будут деньги, чтобы угостить Товарища латте!" }
@@ -75,8 +74,7 @@ var consolations = <Consolation[]>
 function GetConsolation() : Consolation
 {
 
-	//return IsFirstTimer() ? consolations[0] : consolations.sample();
-	return consolations[consolations.length - 2];
+	return IsFirstTimer() ? consolations[0] : consolations.sample();
 }
 
 function IsFirstTimer() : boolean
