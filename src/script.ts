@@ -145,7 +145,7 @@ function ShowConsolation() : void
 
 function HideConsolation() : void
 {
-	$("#textarea").text("");
+	$("#textarea").val("");
 	$("#problem").show();
 	$("#solution").hide();
 }
