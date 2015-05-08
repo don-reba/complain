@@ -53,7 +53,7 @@ function ShowConsolation() {
     solution.show();
 }
 function HideConsolation() {
-    $("#textarea").text("");
+    $("#textarea").val("");
     $("#problem").show();
     $("#solution").hide();
 }
